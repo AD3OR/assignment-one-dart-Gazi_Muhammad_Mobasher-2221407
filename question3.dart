@@ -20,12 +20,18 @@ class BankAccount {
   // TODO: Implement the deposit method
   void deposit(double amount) {
     // TODO: Add the amount to balance
+    balance += amount;
   }
   
   //    - withdraw(double amount): Remove money from account (check for sufficient funds)
   // TODO: Implement the withdraw method
   void withdraw(double amount) {
     // TODO: Check for sufficient funds and subtract amount
+    if (amount <= balance) {
+      balance -= amount;
+    } else {
+      print("Insufficient funds for withdrawal of \$${amount.toStringAsFixed(2)}");
+    }
     // TODO: Print error message if insufficient funds
   }
   
@@ -33,13 +39,17 @@ class BankAccount {
   // TODO: Implement the getBalance method
   double getBalance() {
     // TODO: Return the current balance
-    return 0.0; // TODO: Replace with actual balance
+    return balance; // TODO: Replace with actual balance
   }
   
   //    - displayAccountInfo(): Show account details
   // TODO: Implement the displayAccountInfo method
   void displayAccountInfo() {
     // TODO: Display account information
+    print("Account Number: $accountNumber");
+    print("Account Holder: $accountHolder");
+    print("Account Type: $accountType");
+    print("Balance: \$${balance.toStringAsFixed(2)}");
   }
 }
 
